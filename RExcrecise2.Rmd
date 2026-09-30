@@ -1,0 +1,119 @@
+---
+title: "Arithmetic Operations and Basic Data Types"
+author: "Josephine Pearl labordo"
+date: "2026-09-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part A - Arithmetic operations
+
+```{r}
+a <- 17
+b <- 5
+a+b
+a-b
+a*b
+a/b
+```
+```{r}
+a <- 17
+b <- 5
+a%%b
+a%/%b
+```
+```{r}
+2 ^ 10
+```
+## Part B - Basic Data Types: typeof(), class(), and mode()
+
+```{r}
+x <- 42
+y <- 42L        # the L suffix forces an integer
+z <- "42"
+w <- TRUE
+v <- 3 + 2i     # complex number
+typeof(x)
+typeof(y)
+typeof(z)
+typeof(w)
+typeof(v)
+```
+```{r}
+x <- 42
+y <- 42L        # the L suffix forces an integer
+z <- "42"
+w <- TRUE
+v <- 3 + 2i     # complex number
+class(x)
+class(y)
+class(z)
+class(w)
+class(v)
+```
+```{r}
+x <- 42
+y <- 42L        # the L suffix forces an integer
+z <- "42"
+w <- TRUE
+v <- 3 + 2i     # complex number
+mode(x)
+mode(y)
+mode(z)
+mode(w)
+mode(v)
+```
+## Part C - Type Conversion
+```{r}
+num_string <- "123"
+as.numeric("123")
+typeof(num_string)
+class(num_string)
+mode(num_string)
+```
+```{r}
+num <- 0
+num2 <- 1
+as.logical(0)
+as.logical(1)
+```
+```{r}
+bad_string <- "hello123"
+as.numeric("hello123")
+```
+## Part D - Strings paste(), and paste0()
+
+```{r}
+first_name <- "Juan"
+last_name <- "Dela Cruz"
+full_name <- cat(first_name,last_name)
+```
+```{r}
+first_name <- "Juan"
+last_name <- "Dela Cruz"
+name <- paste("my name is", first_name,last_name)
+name
+name <- paste0("my name is", first_name,last_name)
+name
+```
+```{r}
+first_name <- "Juan  "
+last_name <- "Dela Cruz"
+name <- paste("my name is", first_name,last_name, sep = "-")
+name
+```
+```{r}
+first_name <- "Juan"
+last_name <- "Dela Cruz"
+age <- 21 
+name <- paste0( first_name,last_name, "is ", age, "years old")
+name
+```
+## Part E - Critical Thinking Challenge
+
+```{r}
+5 + 5
+```
