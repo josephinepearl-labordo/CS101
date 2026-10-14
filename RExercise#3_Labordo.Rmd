@@ -1,0 +1,115 @@
+---
+title: "RExercise#3_Labordo"
+author: "Josephine Pearl labordo"
+date: "2026-10-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Part A - Creating vectors
+
+```{r}
+scores <- c(88,92,79,95,84)
+subjects <- c("Math", "Science", "English", "History", "PE")
+```
+
+```{r}
+odds <- seq(1,19, by=2)
+vectorA<- seq(0,1, length = 5)
+```
+
+```{r}
+vectorA <- rep("A",4)
+vectorB <- rep(c("A","B"), each =3)
+vectorC <- rep(c("A", "B"), 2)
+```
+
+
+##Part B- Subsetting(Accessing) Vectors
+
+```{r}
+grades <- c(88,92,79,95,84)
+names(grades) <- c("Math", "Science", "English", "History", "PE")
+grades[3]
+grades[c(1,4)]
+grades[c("Science", "PE")]
+```
+```{r}
+grades <- c(88,92,79,95,84)
+grades[-c(2,3,5)]
+```
+```{r}
+grades <- c(88,92,79,95,84)
+grades[grades >= 85]
+```
+## C- Vector operations and "append"
+```{r}
+x <- c(1,2,3,4)
+y <- c(10,20,30,40)
+x*y
+x*2
+```
+```{r}
+z <- c(1,2,3,4,5,6)
+short <- c(1,0)
+z+short
+```
+```{r}
+fruits <- c("apple", "banana", "cherry")
+append(fruits, "date")
+append(fruits, "kiwi", after = 1)
+```
+## D- Lists: Creating and Subsetting
+```{r}
+student <- list(name = "Maria Santos",
+                age = 20,
+                grades = c(88,92,79),
+                is_enrolled = TRUE
+                )
+```
+
+```{r}
+student <- list(name = "Maria Santos",
+                age = 20,
+                grades = c(88,92,79),
+                is_enrolled = TRUE
+                )
+student["grades"]
+class(student["grades"])
+```
+```{r}
+student <- list(name = "Maria Santos",
+                age = 20,
+                grades = c(88,92,79),
+                is_enrolled = TRUE
+                )
+student[["grades"]]
+class(student[["grades"]])
+```
+```{r}
+student <- list(name = "Maria Santos",
+                age = 20,
+                grades = c(88,92,79),
+                is_enrolled = TRUE
+                )
+student$name
+```
+```{r}
+student <- list(name = "Maria Santos",
+                age = 20,
+                grades = c(88,92,79),
+                is_enrolled = TRUE
+                )
+student$grades[2]
+```
+##Part E - Critical Thinking Challenge
+```{r}
+inventory <- list(item = c("Notebook", "Pen", "Erases"),
+                price = c(25.50, 10.00, 5.00),
+                in_stock = c(TRUE, TRUE, FALSE)
+                )
+inventory$item[inventory$in_stock == TRUE]
+```
