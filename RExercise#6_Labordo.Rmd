@@ -1,0 +1,91 @@
+---
+title: "RExercise#6_Labordo"
+author: "Josephine Pearl labordo"
+date: "2026-10-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part A — Creating Data Frames
+
+```{r}
+name <-  c("Ana", "Ben", "Cid", "Dex", "Eli")
+age  <- c(20, 21, 19, 22, 20)
+passed <-  c(TRUE, TRUE, FALSE, TRUE, FALSE)
+students <- data.frame(
+   name = name,
+   age = age, 
+   passed = passed
+)
+students
+typeof(students$name)
+class(students$name)
+```
+
+```{r}
+courses <- data.frame(
+  course_code = c("IS101", "IS102", "IS103"),
+  units = c(3, 3, 2),
+  instructor = c("Dr. P. Reyes", "Dr. R. Santos", "Dr. S. Cruz")
+)
+courses
+```
+
+## Part B — Subsetting Data Frames
+
+```{r}
+name <-  c("Ana", "Ben", "Cid", "Dex", "Eli")
+age  <- c(20, 21, 19, 22, 20)
+passed <-  c(TRUE, TRUE, FALSE, TRUE, FALSE)
+students <- data.frame(
+   name = name,
+   age = age, 
+   passed = passed
+)
+students$age
+students[["age"]]
+students["age"]
+students[2, ]
+students[3, "name"]
+students[students$passed == TRUE, ]
+students[students$passed == TRUE & students$age > 19, ]
+```
+
+## Part C — Data Frame Properties
+
+```{r}
+name <-  c("Ana", "Ben", "Cid", "Dex", "Eli")
+age  <- c(20, 21, 19, 22, 20)
+passed <-  c(TRUE, TRUE, FALSE, TRUE, FALSE)
+students <- data.frame(
+   name = name,
+   age = age, 
+   passed = passed
+)
+str(students)
+dim(students)
+nrow(students)
+ncol(students)
+colnames(students)
+summary(students)
+students
+```
+
+```{r}
+name <-  c("Ana", "Ben", "Cid", "Dex", "Eli")
+age  <- c(20, 21, 19, 22, 20)
+passed <-  c(TRUE, TRUE, FALSE, TRUE, FALSE)
+students <- data.frame(
+   name = name,
+   age = age, 
+   passed = passed
+)
+students$year_level <- c(2, 3, 1, 4, 2)
+students$passed <- NULL
+students[order(students$age), ]
+order(-students$age)
+students
+```
