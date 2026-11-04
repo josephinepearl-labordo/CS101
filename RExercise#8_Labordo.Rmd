@@ -1,0 +1,45 @@
+---
+title: "RExercise#8_Labordo"
+author: "Josephine Pearl labordo"
+date: "2026-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Part A:  Creating data frames
+```{r}
+names <- c("Anna", "Ben", "Cid", "Dex", "Eli", "Fay", "Gio")
+scores <- c(78, 92, 85, 92, 67, 88, 74)
+sort(scores)
+sort(scores, decreasing=TRUE)
+sort(names)
+subjects <- c("Science", "Math", "English", "Filipino", "PE")
+incomplete <- c(85, NA, 90, 70, NA, 95)
+sort(subjects)
+sort(incomplete)
+order(scores)
+students <- data.frame(
+  name = c("Ana", "Ben", "Cid", "Dex", "Eli", "Fay", "Gio"),
+  score = c(78, 92, 85, 92, 67, 88, 74),
+  section = c("A", "B", "A", "B", "A", "B", "A")
+)
+
+students
+students[order(students$score), ]
+students[order(students$score,decreasing=TRUE), ]
+cbind(scores, rank(scores))
+```
+
+```{r}
+sales <- data.frame( 
+  employee = c("Rey", "Sam", "Tin", "Uma", "Val"), 
+  units_sold = c(120, 145, 145, 98, 130)
+)
+sales
+sales$rank <- rank(sales$units_sold)
+sales
+sales[order(sales$units_sold,decreasing=TRUE), ]
+```
