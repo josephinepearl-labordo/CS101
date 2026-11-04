@@ -1,0 +1,58 @@
+---
+title: "RExercise#9_labordo"
+author: "Josephine Pearl labordo"
+date: "2026-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+ShoeSize <- c(6.5,9.0,8.5,8.5,10.5,7.0,9.5,9.0,13.0,7.5,10.5,8.5,12.0,10.5,
+              13.0,11.5,8.5,5.0,10.0,6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0)
+
+Height <- c(66.0,68.0,64.5,65.0,70.0,64.0,70.0,71.0,72.0,64.0,74.5,67.0,71.0,71.0,
+            77.0,72.0,59.0,62.0,72.0,66.0,64.0,67.0,73.0,69.0,72.0,70.0,69.0,70.0)
+
+Gender <- c("F","F","F","F","M","F","F","F","M","F","M","F","M","M",
+            "M","M","F","F","M","F","F","M","M","F","M","M","M","M")
+
+shoes <- data.frame(ShoeSize, Height, Gender)
+
+write.csv(shoes, "shoesize.csv", row.names = FALSE)
+
+shoes <- read.csv("shoesize.csv")
+
+tail(shoes, 5)
+
+str(shoes)
+shoes
+dim(shoes)
+nrow(shoes)
+ncol(shoes)
+summary(shoes)
+str(shoes)
+males <- subset(shoes, Gender == "M")
+females <- subset(shoes, Gender == "F")
+
+males
+females
+mean(shoes$ShoeSize)
+mean(shoes$Height)
+mean(shoes$ShoeSize)
+mean(shoes$Height)
+
+shoes$Gender <- factor(shoes$Gender)
+
+str(shoes$Gender)
+str(shoes)
+cor(shoes$ShoeSize, shoes$Height)
+subset(shoes, ShoeSize >= 11)
+aggregate(cbind(ShoeSize, Height) ~ Gender,
+          data = shoes,
+          mean)
+```
