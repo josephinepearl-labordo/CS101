@@ -1,10 +1,10 @@
 ---
-title: "RPractical_labordo"
+title: "RPractical_Labordo"
 author: "Josephine Pearl labordo"
 date: "2026-11-11"
 output: 
-      pdf_document: default
-      html_document: default
+       pdf_document: default
+       html_document: default
 ---
 
 ```{r setup, include=FALSE}
